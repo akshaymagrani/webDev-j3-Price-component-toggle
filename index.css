@@ -1,0 +1,227 @@
+/* 
+
+Linear Gradient: hsl(236, 72%, 79%) to hsl(237, 63%, 64%)
+font-family: 'Montserrat', sans-serif;
+
+*/
+/*variables for colors used in design*/
+:root{
+--veryLightGrayishBlue: hsl(240, 78%, 98%);
+--lightGrayishBlue: hsl(234, 14%, 74%);
+--grayishBlue: hsl(233, 13%, 49%);
+--darkGrayishBlue: hsl(232, 13%, 33%) ;
+--linearG:hsl(236, 72%, 79%), hsl(237, 63%, 64%);
+}
+
+*{
+    padding:0;
+    margin: 0;
+    font-family:'Montserrat', sans-serif;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+body{
+    background-color: var(--veryLightGrayishBlue) ;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+h1 {
+    font-size: 2em;
+    color: var(--grayishBlue);
+}
+.price-div {
+    display: flex;
+    color: var(--lightGrayishBlue);
+    justify-content: center;
+    align-items: center;
+}
+input[type="checkbox"] {
+    position: relative;
+    width:40px;
+    height:20px;
+    background-image: linear-gradient(90deg, var(--linearG));
+    -webkit-appearance: none;
+    border-radius:20px;
+    cursor: pointer;
+}
+input[type="checkbox"]::before{
+    position:absolute;
+    top: 0;
+    left:0;
+    content: '';
+    width:20px;
+    height:20px;
+    border-radius:20px;
+    background-color: white;
+    transform: scale(0.8);
+    transition: 0.5s;
+}
+input:checked[type="checkbox"]::before{
+    
+    left:20px;
+}
+input[type="checkbox"]::after{
+    position:absolute;
+    top: 0;
+    left:0;
+    content: '';
+    width:20px;
+    height:20px;
+    border-radius:20px;
+    transform: scale(0.8);
+    transition: 0.5s;
+}
+input:checked[type="checkbox"]::after{
+    background-color: white;
+    left:20px;
+}
+.bg-top{
+    position: absolute;
+    top:0;
+    right: 0;
+}
+.bg-bottom{
+    position: absolute;
+    bottom:0;
+    left: 0;
+}
+.basic, .master{
+    background-color: white;
+    position: relative;
+    z-index: 1;
+    color: var(--darkGrayishBlue);
+    padding:2em;
+    border-radius: 10px;
+}
+.professional{
+    background-image: linear-gradient(180deg,var(--linearG));
+    position: relative;
+    z-index: 1;
+    color:white;
+    padding:2em;
+    border-radius: 10px;
+}
+.button1, .button3{
+    background-color:hsl(237, 63%, 64%);
+    text-transform: uppercase;
+    color:white;
+    border: none;
+    width:100%;
+    padding:1em;
+    margin:1em 0;
+    border-radius: 5px;
+    cursor:pointer;
+}
+.button2 {
+    background-color: white;
+    text-transform: uppercase;
+    border: none;
+    width:100%;
+    padding:1em;
+    margin:1em 0;
+    border-radius: 5px;
+    cursor:pointer;
+}
+.price{
+    font-size: 4em;
+}
+.annually-price0, .annually-price1, .annually-price2{
+    display:block;
+}
+.monthly-price0, .monthly-price1, .monthly-price2{
+    display:none;
+}
+@media only screen and (max-width:375px) {
+    body{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .bg-top{
+        position: absolute;
+        top:0;
+        right: -200px;
+    }
+    .bg-bottom{
+        display: none;
+        position: absolute;
+        bottom:0;
+        left: 0;
+    }
+    h1{
+        padding:1em 0 0.5em;
+        margin:1em 0 0.5em;
+    }
+    .price-div{
+        padding:1em;
+        margin:1em;
+    }
+    .basic, .master {
+        margin:1em;
+    }
+    .professional{
+        margin:1em;
+    }
+    .price-div > p {
+        padding: 0.5em;
+        margin: 0.5em;
+    }
+}
+@media only screen and (min-width:375px) {
+    body{
+        display:grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 0.5fr 1fr;
+    }
+    .head{
+        grid-column: 1/4;
+        grid-row: 1/2;
+    }
+    h1{
+        padding:1em 0 0.5em;
+        margin:1em 0 0.5em;
+    }
+    .price-div{
+        padding:1em;
+        margin:1em;
+    }
+    .price-div > p{
+        padding:0.5em;
+        margin:0.5em;
+    }
+    .section-price{
+        grid-row: 2/3;
+        grid-column: 1/4;
+        justify-content: center;
+        display: flex;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+    .basic{
+        grid-column: 1/2;
+        grid-row: 1/2;
+        margin:1em 0;
+    }
+    .professional{
+        grid-column: 2/3;
+        grid-row: 1/2;
+    }
+    .master{
+        grid-column: 3/4;
+        grid-row: 1/2;
+        margin:1em 0;
+    }
+    .bg-top{
+        position: absolute;
+        top:0;
+        right: 0;
+    }
+    .bg-bottom{
+        position: absolute;
+        bottom:0;
+        left: 0;
+    }
+
+}
+.attribution { font-size: 11px; text-align: center; grid-column: 1/4; padding:1em;; }
+.attribution a { color: hsl(228, 45%, 44%); }
